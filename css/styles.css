@@ -152,7 +152,7 @@
   grid-template-columns: 1fr var(--column-right-content); 
   padding-inline: var(--space-h-80);
   column-gap: var(--space-h-80);
-  row-gap: var(--space-v-80);
+  row-gap: var(--space-v-40);
   align-items: start;
 }
 
@@ -223,6 +223,7 @@ body {
     text-decoration: underline 0.1em rgba(0, 0, 0, 0);
     text-underline-offset: 0.3em;
     transition: text-decoration-color 300ms ease;
+    text-decoration-line: unset;
   }
 
   a:hover, a:focus, p a {
@@ -281,6 +282,7 @@ body {
 
   .menu-toggle[aria-expanded="false"] .menu-toggle-text::after {
     content: "Menu";
+    color: var(--color-text);
   }
   .menu-toggle[aria-expanded="true"] .menu-toggle-text::after {
     content: "Close";
