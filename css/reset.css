@@ -10,38 +10,37 @@ video {
   max-width: 100%;
 }
 
-article {
-  position: relative;
-}
 /* Reset the counter on the main ordered list */
-ol {
+article ol {
   counter-reset: section;
   list-style-type: none;
 }
 /* Style for the main list items */
-ol > li {
+article ol > li {
   counter-increment: section;
   
   
 }
 /* Before each list item in the main list, insert the counter */
-ol > li::before {
+article ol > li::before {
   content: counter(section) ". ";
   
 }
 /* For nested lists (2nd level), add a new counter and reset */
-ol > li > ol {
+article ol > li > ol {
   counter-reset: subsection;
+  padding-inline-start: 3.5em;
   
 }
 /* For nested list items, increment the subsection counter */
-ol > li > ol > li {
+article ol > li > ol > li {
   counter-increment: subsection;
+  position: relative;
 }
 /* Format the second-level list items with main section and subsection */
-ol > li > ol > li::before {
+article ol > li > ol > li::before {
   content: counter(section) "." counter(subsection) " ";
   position: absolute;
   text-align: right;
-  left: 2.9em;
+  left: -2.8em;
 }
