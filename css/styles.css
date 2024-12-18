@@ -425,6 +425,10 @@ body {
     row-gap: var(--space-v-40);
   }
   
+.hero-img-container {
+  display: grid;
+}
+
   .hero-img {
     max-width: 30cqw;
     aspect-ratio: 9 / 16;
