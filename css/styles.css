@@ -17,10 +17,10 @@
 
 @font-face {
   font-family: 'Sans';
-  src: url('../assets/fonts/Switzer-Italic.woff2') format('woff2'),
-       url('../assets/fonts/Switzer-Italic.woff') format('woff'),
-       url('../assets/fonts/Switzer-Italic.ttf') format('truetype');
-  font-weight: 400;
+  src: url('../assets/fonts/Switzer-VariableItalic.woff2') format('woff2'),
+       url('../assets/fonts/Switzer-VariableItalic.woff') format('woff'),
+       url('../assets/fonts/Switzer-VariableItalic.ttf') format('truetype');
+/*   font-weight: 400; */
   font-display: swap;
   font-style: italic;
 }
@@ -228,13 +228,14 @@ body {
 
   a:hover, a:focus, p a {
     text-decoration: underline 0.1em rgba(0, 0, 0, 1);
+    text-decoration-line: underline;
   }
 
   a:focus:not(:hover) {
     text-decoration: none;
 }
 
-  article p {
+  article p, article ol {
     max-width: 65ch;
   }
 
@@ -435,6 +436,7 @@ body {
     justify-self: end;
     margin-right: calc(-1* var(--space-h-80));
     object-fit: cover;
+    max
     
   }
 
@@ -457,7 +459,7 @@ body {
 
   .hero-intro-text {
       margin-top: var(--space-v-240);
-      margin-bottom: var(--space-v-80);
+      margin-bottom: var(--space-v-40);
       grid-row: 1/2;
   }
 
@@ -504,6 +506,22 @@ body {
     gap: 0.5em;
   }
 
+  .service-preview-card.full {
+    display: grid;
+    flex-wrap: wrap;
+    column-gap: var(--space-h-40);
+    grid-template-columns: minmax(min(4rem, 100%), 30%) minmax(30ch, 1fr);
+  }
+
+  .service-preview-card.full img {
+   
+  }
+  @media (max-width: 28em) {
+    .service-preview-card.full {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .read-more {
     place-self: end;
   }
@@ -520,7 +538,7 @@ body {
     grid-area: content;
     display: flex;
     flex-direction: column;
-    row-gap: var(--space-v-20);
+    row-gap: var(--space-v-40);
   }
 
   .section-testimonial {
@@ -617,6 +635,7 @@ body {
 
   .hero-img {
     max-width: min(100%, 2rem + 45cqw);
+    max-height: 100svh;
     aspect-ratio: 2 / 3;
   }
 
@@ -645,11 +664,22 @@ body {
   .service-cards {
     grid-template-columns: 1fr;
   }
+
+  .section-services-full {
+    background-color: var(--color-secondary-darker);
+    grid-template-rows: auto auto;
+    grid-template-areas: "heading" "content";
+  }
+
   .section-testimonial {
     grid-template-areas:
         "heading"
         "text"
         "badge";
+}
+
+footer {
+  grid-template-columns: 1fr;
 }
 
 }

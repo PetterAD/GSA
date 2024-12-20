@@ -15,6 +15,10 @@ article ol {
   counter-reset: section;
   list-style-type: none;
 }
+
+article > ol {
+  padding-inline-start: 0;
+}
 /* Style for the main list items */
 article ol > li {
   counter-increment: section;
