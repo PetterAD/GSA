@@ -557,8 +557,8 @@ body {
   }
 
   .testimonial-badge {
-    width: min(5rem, 3rem + 2cqw);
-    max-width: 6rem;
+    width: max(5rem, 3rem + 4cqw);
+    max-width: 8rem;
     align-self: end;
     grid-area: badge;
   }
